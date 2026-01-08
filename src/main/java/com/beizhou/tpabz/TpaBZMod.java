@@ -14,6 +14,7 @@ public class TpaBZMod {
     public static final Logger logger = LogManager.getLogger(TpaBZMod.MOD_ID);
 
     public TpaBZMod() {
+        // 我他妈的终于成功了吗
     }
 
     @SubscribeEvent
