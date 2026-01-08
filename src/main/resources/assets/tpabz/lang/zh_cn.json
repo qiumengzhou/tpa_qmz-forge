@@ -1,0 +1,6 @@
+{
+  "tpa.no_back_position": "没有可以返回的位置",
+  "tpa.cannot_teleport": "无法传送",
+  "tpa.teleport_success": "%s已传送到%s",
+  "tpa.back_success": "你已返回"
+}

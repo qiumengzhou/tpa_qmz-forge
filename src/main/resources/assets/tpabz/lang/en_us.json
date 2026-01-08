@@ -1,0 +1,6 @@
+{
+  "tpa.no_back_position": "No position to return to",
+  "tpa.cannot_teleport": "Cannot teleport",
+  "tpa.teleport_success": "%s has been teleported to %s",
+  "tpa.back_success": "You have returned"
+}

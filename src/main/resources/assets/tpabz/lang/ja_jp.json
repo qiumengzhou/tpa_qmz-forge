@@ -1,0 +1,6 @@
+{
+  "tpa.no_back_position": "戻れる場所がありません",
+  "tpa.cannot_teleport": "テレポートできません",
+  "tpa.teleport_success": "%sが%sにテレポートします",
+  "tpa.back_success": "元の場所に戻ります"
+}
