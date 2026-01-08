@@ -1,4 +1,4 @@
-package com.beizhou.tpabz.command;
+package com.qiumengzhou.tpaqmz.command;
 
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

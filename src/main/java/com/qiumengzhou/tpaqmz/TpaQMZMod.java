@@ -1,4 +1,4 @@
-package com.beizhou.tpabz;
+package com.qiumengzhou.tpaqmz;
 
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -8,21 +8,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Level;
 
-@Mod(TpaBZMod.MOD_ID) // 注册模组
-public class TpaBZMod {
-    public static final String MOD_ID = "tpa_bz";
-    public static final Logger logger = LogManager.getLogger(TpaBZMod.MOD_ID);
+@Mod(TpaQMZMod.MOD_ID) // 注册模组
+public class TpaQMZMod {
+    public static final String MOD_ID = "tpa_qmz";
+    public static final Logger logger = LogManager.getLogger(TpaQMZMod.MOD_ID);
 
-    public TpaBZMod() {
+    public TpaQMZMod() {
     }
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        logger.log(Level.INFO, "tpa_bz Initializing client...");
+        logger.log(Level.INFO, "tpa_qmz Initializing client...");
     }
 
     @SubscribeEvent
     public static void onServerAboutToStart(FMLDedicatedServerSetupEvent event) {
-        logger.log(Level.INFO, "tpa_bz starting...");
+        logger.log(Level.INFO, "tpa_qmz starting...");
     }
 }

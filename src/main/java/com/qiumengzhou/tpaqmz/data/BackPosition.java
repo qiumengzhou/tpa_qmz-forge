@@ -1,5 +1,5 @@
 
-package com.beizhou.tpabz.data;
+package com.qiumengzhou.tpaqmz.data;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;

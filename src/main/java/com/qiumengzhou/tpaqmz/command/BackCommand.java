@@ -1,7 +1,7 @@
-package com.beizhou.tpabz.command;
+package com.qiumengzhou.tpaqmz.command;
 
-import com.beizhou.tpabz.data.BackData;
-import com.beizhou.tpabz.data.BackPosition;
+import com.qiumengzhou.tpaqmz.data.BackData;
+import com.qiumengzhou.tpaqmz.data.BackPosition;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;

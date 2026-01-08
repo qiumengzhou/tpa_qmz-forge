@@ -1,4 +1,4 @@
-package com.beizhou.tpabz.data;
+package com.qiumengzhou.tpaqmz.data;
 
 import java.util.HashMap;
 import java.util.Map;
