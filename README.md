@@ -1,10 +1,15 @@
+# 简单传送（TP）模组说明
+当你和朋友相隔千里时，有没有想过使用 `tp` 命令？  
+但是这通常需要作弊权限，可能会让你担心朋友在游戏中作弊。
 
-When you and your friend are thousands of miles apart, have you ever thought about using the tp command? However, this requires cheat permission, which may make you worry about your friend cheating in the game.
-
-This mod is dedicated to the simplest tp, without requiring the consent.It also adds a back command, which can be used after death and tp.
-
-/tpa A. The executor will be teleported to the location of Player A.
-/tpa A B. A will be teleported to the location of Player B.
-
-When a player dies or uses tpa, their current location will be recorded.
-/back. The executor will return to the recorded location.
+本模组专为最简单的传送功能而设计，不需要对方同意。  
+此外，还增加了 `back` 命令，可以在死亡或传送后使用。
+---
+## 命令说明
+- `/tpa A`  
+  将执行者传送到玩家 **A** 的位置。
+- `/tpa A B`  
+  将玩家 **A** 传送到玩家 **B** 的位置。
+- `/back`  
+  将执行者传送回记录的位置。
+> 注意：当玩家死亡或使用 `/tpa` 命令时，他们当前的位置会被记录。
