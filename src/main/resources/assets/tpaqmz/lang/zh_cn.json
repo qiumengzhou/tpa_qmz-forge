@@ -1,6 +1,13 @@
 {
+  "tpa.illegal_execution": "该指令只能由玩家执行",
   "tpa.no_back_position": "没有可以返回的位置",
   "tpa.cannot_teleport": "无法传送",
   "tpa.teleport_success": "%s已传送到%s",
-  "tpa.back_success": "你已返回"
+  "tpa.back_success": "你已返回",
+  "tpa.request_send": "%s请求将%s传送到%s",
+  "tpa.request_accept": "[同意]",
+  "tpa.request_deny": "[拒绝]",
+  "tpa.request_timeout": "请求超时",
+  "tpa.request_invalidated": "该请求已失效",
+  "tpa.request_failure": "%s拒绝了请求"
 }

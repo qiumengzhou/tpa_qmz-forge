@@ -1,6 +1,13 @@
 {
+  "tpa.illegal_execution": "This command can only be executed by a player",
   "tpa.no_back_position": "No position to return to",
   "tpa.cannot_teleport": "Cannot teleport",
   "tpa.teleport_success": "%s has been teleported to %s",
-  "tpa.back_success": "You have returned"
+  "tpa.back_success": "You have returned",
+  "tpa.request_send": "%s requests to teleport %s to %s",
+  "tpa.request_accept": "[Accept]",
+  "tpa.request_deny": "[Deny]",
+  "tpa.request_timeout": "The request has timed out",
+  "tpa.request_invalidated": "This request is no longer valid",
+  "tpa.request_failure": "%s rejected the request"
 }

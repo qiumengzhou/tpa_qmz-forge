@@ -11,5 +11,6 @@ public class CommandRegister {
         // 在服务器初始化指令系统时，由 Forge 调用
         TpaCommand.register(event.getDispatcher());
         BackCommand.register(event.getDispatcher());
+        TpaResponseCommand.register(event.getDispatcher());
     }
 }
