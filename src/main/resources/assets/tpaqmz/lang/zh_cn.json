@@ -9,5 +9,11 @@
   "tpa.request_deny": "[拒绝]",
   "tpa.request_timeout": "请求超时",
   "tpa.request_invalidated": "该请求已失效",
-  "tpa.request_failure": "%s拒绝了请求"
+  "tpa.request_failure": "%s拒绝了请求",
+
+  "key.tpaqmz.quick_request": "按下发送请求",
+  "key.categories.tpaqmz": "TPA QMZ",
+
+  "tpa.quick_request": "%s：一支穿云箭，千军万马来相见！[点击救援]",
+  "tpa.quick_request_assist": "%s：我来助你！"
 }
