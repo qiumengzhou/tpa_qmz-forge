@@ -17,7 +17,7 @@ public class KeyBindingHandler {
     public static final KeyMapping QUICK_TPA_KEY = new KeyMapping(
             "key.tpaqmz.quick_request",
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_RIGHT_ALT,
+            GLFW.GLFW_KEY_LEFT_ALT,
             "key.categories.tpaqmz"
     );
 

@@ -50,8 +50,17 @@ public class QuickRequestPacket {
                     .withStyle(ChatFormatting.GOLD)
                     .append(Component.literal(" "))
                     .append(clickText);
-
             sender.getServer().getPlayerList().broadcastSystemMessage(broadcast, false);
+
+            // 发送穿云箭声音
+            for (ServerPlayer player : sender.getServer().getPlayerList().getPlayers()) {
+                player.playNotifySound(
+                        net.minecraft.sounds.SoundEvents.FIREWORK_ROCKET_LAUNCH, // 声音类型：烟花发射
+                        net.minecraft.sounds.SoundSource.AMBIENT,
+                        1.0F,                                           // 音量
+                        1.0F                                                    // 音调
+                );
+            }
         });
         ctx.get().setPacketHandled(true);
     }
