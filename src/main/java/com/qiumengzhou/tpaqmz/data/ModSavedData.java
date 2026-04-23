@@ -35,6 +35,7 @@ public class ModSavedData extends SavedData {
         return nbt;
     }
 
+    // 将内存数据转化为 NBT
     private static ListTag saveMap(Map<UUID, BackPosition> map) {
         ListTag list = new ListTag();
         map.forEach((uuid, pos) -> {
@@ -51,6 +52,7 @@ public class ModSavedData extends SavedData {
         return list;
     }
 
+    // 将 NBT 转化为内存对象
     private static void loadMap(ListTag list, Map<UUID, BackPosition> map) {
         for (int i = 0; i < list.size(); i++) {
             CompoundTag entry = list.getCompound(i);

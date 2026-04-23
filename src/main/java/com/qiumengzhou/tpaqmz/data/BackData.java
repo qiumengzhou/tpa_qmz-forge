@@ -9,6 +9,7 @@ public class BackData {
     // 记录 玩家发起救援请求 的冷却
     public static final Map<UUID, Long> QUICK_REQUEST_COOLDOWN = new HashMap<>();
 
+    // 记录 玩家传送可返回位置 玩家死亡位置
     public static void setLastPos(ServerLevel level, UUID uuid, BackPosition pos) {
         ModSavedData data = ModSavedData.get(level);
         data.lastPos.put(uuid, pos);
