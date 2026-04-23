@@ -4,6 +4,7 @@
   "tpa.cannot_teleport": "Cannot teleport",
   "tpa.teleport_success": "%s has been teleported to %s",
   "tpa.back_success": "You have returned",
+
   "tpa.request_send": "%s requests to teleport %s to %s",
   "tpa.request_accept": "[Accept]",
   "tpa.request_deny": "[Deny]",
@@ -11,9 +12,12 @@
   "tpa.request_invalidated": "This request is no longer valid",
   "tpa.request_failure": "%s rejected the request",
 
-  "key.tpaqmz.quick_request": "Quick Rescue Request",
-  "key.categories.tpaqmz": "TPA QMZ",
+  "tpa.cooldown_msg": "Cooling down. Please wait %s seconds!",
+  "tpa.quick_request": "%s：A signal arrow rises, and allies come to the rescue! [Click to Assist]",
+  "tpa.click_to_assist": "[Click to Assist]",
+  "tpa.tip_for_clicking": "Assist the player",
+  "tpa.quick_request_assist": "%s：I'm here to help!",
 
-  "tpa.quick_request": "%s：一支穿云箭，千军万马来相见！[点击救援]",
-  "tpa.quick_request_assist": "%s：我来助你！"
+  "key.tpaqmz.quick_request": "Quick Rescue Request",
+  "key.categories.tpaqmz": "TPA QMZ"
 }

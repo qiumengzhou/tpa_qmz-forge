@@ -4,10 +4,20 @@
   "tpa.cannot_teleport": "無法傳送",
   "tpa.teleport_success": "%s已傳送到%s",
   "tpa.back_success": "你已返回",
+
   "tpa.request_send": "%s請求將%s傳送到%s",
   "tpa.request_accept": "[同意]",
   "tpa.request_deny": "[拒絕]",
   "tpa.request_timeout": "請求逾時",
   "tpa.request_invalidated": "該請求已失效",
-  "tpa.request_failure": "%s拒絕了請求"
+  "tpa.request_failure": "%s拒絕了請求",
+
+  "tpa.cooldown_msg": "穿雲箭冷卻中，請等待 %s 秒後再試！",
+  "tpa.quick_request": "%s：一支穿雲箭，千軍萬馬來相見！",
+  "tpa.click_to_assist": "[點擊救援]",
+  "tpa.tip_for_clicking": "進行救援",
+  "tpa.quick_request_assist": "%s：我來助你！",
+
+  "key.tpaqmz.quick_request": "發起救援請求",
+  "key.categories.tpaqmz": "TpaQMZ 模組設定"
 }

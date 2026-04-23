@@ -4,10 +4,20 @@
   "tpa.cannot_teleport": "テレポートできません",
   "tpa.teleport_success": "%sが%sにテレポートしました",
   "tpa.back_success": "元の場所に戻りました",
+
   "tpa.request_send": "%sが%sを%sにテレポートするリクエストを送信しました",
   "tpa.request_accept": "[同意]",
   "tpa.request_deny": "[拒否]",
   "tpa.request_timeout": "リクエストがタイムアウトしました",
   "tpa.request_invalidated": "このリクエストは無効です",
-  "tpa.request_failure": "%sがリクエストを拒否しました"
+  "tpa.request_failure": "%sがリクエストを拒否しました",
+
+  "tpa.cooldown_msg": "冷却中です。%s秒待ってください！",
+  "tpa.quick_request": "%s：穿雲箭一筋、千軍万馬が集まる！",
+  "tpa.click_to_assist": "[クリックで救援]",
+  "tpa.tip_for_clicking": "救援を実行",
+  "tpa.quick_request_assist": "%s：助けに来た！",
+
+  "key.tpaqmz.quick_request": "救援リクエストを送信",
+  "key.categories.tpaqmz": "TpaQMZ モッド設定"
 }
