@@ -15,7 +15,7 @@ public class BackCommand {
                 Commands.literal("back")
                         .executes(context -> {
                             ServerPlayer executor = context.getSource().getPlayerOrException();
-                            BackPosition pos = BackData.LAST_POS.get(executor.getUUID());
+                            BackPosition pos = BackData.getLastPos(executor.serverLevel(), executor.getUUID());
                             if (pos == null) {
                                 context.getSource().sendFailure(
                                         Component.translatable("tpa.no_back_position")
@@ -41,7 +41,7 @@ public class BackCommand {
                         .then(Commands.literal("death") // 返回死亡位置
                                 .executes(context -> {
                                     ServerPlayer executor = context.getSource().getPlayerOrException();
-                                    BackPosition pos = BackData.DEATH_POS.get(executor.getUUID());
+                                    BackPosition pos = BackData.getDeathPos(executor.serverLevel(), executor.getUUID());
                                     if (pos == null) {
                                         context.getSource().sendFailure(
                                                 Component.translatable("tpa.no_death_position")

@@ -1,14 +1,31 @@
 package com.qiumengzhou.tpaqmz.data;
 
+import net.minecraft.server.level.ServerLevel;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public class BackData {
-    // 记录玩家传送前的位置
-    public static final Map<UUID, BackPosition> LAST_POS = new HashMap<>();
-    // 记录玩家死亡的位置
-    public static final Map<UUID, BackPosition> DEATH_POS = new HashMap<>();
-    // 记录玩家上一次发送求救的时间
+    // 记录 玩家发起救援请求 的冷却
     public static final Map<UUID, Long> QUICK_REQUEST_COOLDOWN = new HashMap<>();
+
+    public static void setLastPos(ServerLevel level, UUID uuid, BackPosition pos) {
+        ModSavedData data = ModSavedData.get(level);
+        data.lastPos.put(uuid, pos);
+        data.setDirty();
+    }
+
+    public static BackPosition getLastPos(ServerLevel level, UUID uuid) {
+        return ModSavedData.get(level).lastPos.get(uuid);
+    }
+
+    public static void setDeathPos(ServerLevel level, UUID uuid, BackPosition pos) {
+        ModSavedData data = ModSavedData.get(level);
+        data.deathPos.put(uuid, pos);
+        data.setDirty();
+    }
+
+    public static BackPosition getDeathPos(ServerLevel level, UUID uuid) {
+        return ModSavedData.get(level).deathPos.get(uuid);
+    }
 }

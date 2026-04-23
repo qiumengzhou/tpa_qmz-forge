@@ -62,7 +62,7 @@ public class TpaCommand {
 
     public static void teleport(ServerPlayer from, ServerPlayer to, boolean isQuickAssist) {
         // 记录当前位置，用于回退
-        BackData.LAST_POS.put(from.getUUID(),
+        BackData.setLastPos(from.serverLevel(), from.getUUID(),
                 new BackPosition(
                         from.level().dimension(),
                         from.getX(),
