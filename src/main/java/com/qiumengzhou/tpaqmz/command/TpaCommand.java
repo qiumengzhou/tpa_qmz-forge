@@ -12,8 +12,7 @@ import net.minecraft.server.level.ServerPlayer;
 
 public class TpaCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
-        // 在指令树挂载 tpa 指令
-        dispatcher.register(
+        dispatcher.register(    // 在指令树挂载 tpa 指令
                 Commands.literal("tpa")
                         .then(Commands.argument("playername", EntityArgument.player())
                                 .executes(context -> {
@@ -30,14 +29,16 @@ public class TpaCommand {
                                             teleportDirect(context.getSource(), from, to, false);
                                             return 1;
                                         })))
-                        .then(Commands.literal("assist") // 救援指令
-                                .then(Commands.argument("target", EntityArgument.player())
-                                        .executes(context -> {
-                                            ServerPlayer helper = context.getSource().getPlayerOrException();
-                                            ServerPlayer needy = EntityArgument.getPlayer(context, "target");
-                                            teleportDirect(context.getSource(), helper, needy, true);
-                                            return 1;
-                                        })))
+        );
+        dispatcher.register(    // 挂载救援指令
+                Commands.literal("assist")
+                        .then(Commands.argument("target", EntityArgument.player())
+                                .executes(context -> {
+                                    ServerPlayer helper = context.getSource().getPlayerOrException();
+                                    ServerPlayer needy = EntityArgument.getPlayer(context, "target");
+                                    teleportDirect(context.getSource(), helper, needy, true);
+                                    return 1;
+                                }))
         );
     }
 

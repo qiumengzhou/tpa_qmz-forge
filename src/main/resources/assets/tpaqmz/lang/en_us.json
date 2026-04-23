@@ -1,23 +1,24 @@
 {
-  "tpa.illegal_execution": "This command can only be executed by a player",
-  "tpa.no_back_position": "No position to return to",
+  "tpa.illegal_execution": "Command for players only",
+  "tpa.no_back_position": "No return position",
+  "tpa.no_death_position": "No death position",
   "tpa.cannot_teleport": "Cannot teleport",
-  "tpa.teleport_success": "%s has been teleported to %s",
-  "tpa.back_success": "You have returned",
+  "tpa.teleport_success": "%s teleported to %s",
+  "tpa.back_success": "You returned",
 
-  "tpa.request_send": "%s requests to teleport %s to %s",
+  "tpa.request_send": "%s wants to teleport %s to %s",
   "tpa.request_accept": "[Accept]",
   "tpa.request_deny": "[Deny]",
-  "tpa.request_timeout": "The request has timed out",
-  "tpa.request_invalidated": "This request is no longer valid",
-  "tpa.request_failure": "%s rejected the request",
+  "tpa.request_timeout": "Request timed out",
+  "tpa.request_invalidated": "Request expired",
+  "tpa.request_failure": "%s denied request",
 
-  "tpa.cooldown_msg": "Cooling down. Please wait %s seconds!",
-  "tpa.quick_request": "%s：A signal arrow rises, and allies come to the rescue! [Click to Assist]",
-  "tpa.click_to_assist": "[Click to Assist]",
+  "tpa.cooldown_msg": "Cooldown: %ss left",
+  "tpa.quick_request": "%s is under attack! [Click to Assist]",
+  "tpa.click_to_assist": "[Assist]",
   "tpa.tip_for_clicking": "Assist the player",
-  "tpa.quick_request_assist": "%s：I'm here to help!",
+  "tpa.quick_request_assist": "%s: Fear not! I'm coming!",
 
-  "key.tpaqmz.quick_request": "Quick Rescue Request",
+  "key.tpaqmz.quick_request": "Quick Rescue",
   "key.categories.tpaqmz": "TPA QMZ"
 }

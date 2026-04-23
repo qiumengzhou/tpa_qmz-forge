@@ -1,6 +1,5 @@
 package com.qiumengzhou.tpaqmz.network;
 
-import com.qiumengzhou.tpaqmz.command.TpaCommand;
 import com.qiumengzhou.tpaqmz.data.BackData;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
@@ -42,7 +41,7 @@ public class QuickRequestPacket {
                             .withColor(ChatFormatting.GOLD)
                             .withBold(true)
                             .withUnderlined(true)
-                            .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tpa assist " + sender.getScoreboardName()))
+                            .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/assist " + sender.getScoreboardName()))
                             .withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Component.translatable("tpa.tip_for_clicking")))
                     );
 

@@ -13,7 +13,7 @@ public class PlayerDeathListener {
     public static void onPlayerDeath(LivingDeathEvent event) {
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
 
-        BackData.LAST_POS.put(player.getUUID(),
+        BackData.DEATH_POS.put(player.getUUID(),
                 new BackPosition(
                         player.level().dimension(),
                         player.getX(),

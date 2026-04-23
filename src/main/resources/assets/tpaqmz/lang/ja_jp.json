@@ -1,23 +1,24 @@
 {
-  "tpa.illegal_execution": "このコマンドはプレイヤーのみ実行できます",
-  "tpa.no_back_position": "戻れる場所がありません",
-  "tpa.cannot_teleport": "テレポートできません",
-  "tpa.teleport_success": "%sが%sにテレポートしました",
-  "tpa.back_success": "元の場所に戻りました",
+  "tpa.illegal_execution": "プレイヤーのみ実行可",
+  "tpa.no_back_position": "戻る場所なし",
+  "tpa.no_death_position": "死亡場所なし",
+  "tpa.cannot_teleport": "テレポート不可",
+  "tpa.teleport_success": "%s → %s にテレポート",
+  "tpa.back_success": "戻りました",
 
-  "tpa.request_send": "%sが%sを%sにテレポートするリクエストを送信しました",
+  "tpa.request_send": "%s → %s を %s にテレポート要求",
   "tpa.request_accept": "[同意]",
   "tpa.request_deny": "[拒否]",
-  "tpa.request_timeout": "リクエストがタイムアウトしました",
-  "tpa.request_invalidated": "このリクエストは無効です",
-  "tpa.request_failure": "%sがリクエストを拒否しました",
+  "tpa.request_timeout": "要求がタイムアウト",
+  "tpa.request_invalidated": "要求の有効期限切れ",
+  "tpa.request_failure": "%s が要求を拒否",
 
-  "tpa.cooldown_msg": "冷却中です。%s秒待ってください！",
-  "tpa.quick_request": "%s：穿雲箭一筋、千軍万馬が集まる！",
-  "tpa.click_to_assist": "[クリックで救援]",
-  "tpa.tip_for_clicking": "救援を実行",
-  "tpa.quick_request_assist": "%s：助けに来た！",
+  "tpa.cooldown_msg": "冷却中：あと %s 秒",
+  "tpa.quick_request": "%s：くそ、援護してくれ！[クリックで救援]",
+  "tpa.click_to_assist": "[救援]",
+  "tpa.tip_for_clicking": "プレイヤーを救援",
+  "tpa.quick_request_assist": "%s：助けてやる！",
 
-  "key.tpaqmz.quick_request": "救援リクエストを送信",
-  "key.categories.tpaqmz": "TpaQMZ モッド設定"
+  "key.tpaqmz.quick_request": "救援要求",
+  "key.categories.tpaqmz": "TpaQMZ"
 }

@@ -1,6 +1,7 @@
 {
   "tpa.illegal_execution": "该指令只能由玩家执行",
-  "tpa.no_back_position": "没有可以返回的位置",
+  "tpa.no_back_position": "没有返回位置",
+  "tpa.no_death_position": "没有死亡位置",
   "tpa.cannot_teleport": "无法传送",
   "tpa.teleport_success": "%s已传送到%s",
   "tpa.back_success": "你已返回",
@@ -9,15 +10,15 @@
   "tpa.request_accept": "[同意]",
   "tpa.request_deny": "[拒绝]",
   "tpa.request_timeout": "请求超时",
-  "tpa.request_invalidated": "该请求已失效",
+  "tpa.request_invalidated": "请求已失效",
   "tpa.request_failure": "%s拒绝了请求",
 
-  "tpa.cooldown_msg": "穿云箭冷却中，请等待 %s 秒后再试！",
+  "tpa.cooldown_msg": "请等待 %s 秒后再试！",
   "tpa.quick_request": "%s：一支穿云箭，千军万马来相见！",
-  "tpa.click_to_assist": "[点击救援]",
+  "tpa.click_to_assist": "[救援]",
   "tpa.tip_for_clicking": "进行救援",
   "tpa.quick_request_assist": "%s：我来助你！",
 
   "key.tpaqmz.quick_request": "发起救援请求",
-  "key.categories.tpaqmz": "TpaQMZ 模组设置"
+  "key.categories.tpaqmz": "TpaQMZ"
 }
