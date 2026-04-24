@@ -8,15 +8,25 @@ import java.util.UUID;
 public class BackData {
     // 记录 玩家发起救援请求 的冷却
     public static final Map<UUID, Long> QUICK_REQUEST_COOLDOWN = new HashMap<>();
-    // 获取全局冷却（秒）
+
+    // 记录 全局冷却（秒）
     public static int getGlobalCooldown(ServerLevel level) {
         return ModSavedData.get(level).globalCooldown;
     }
-    // 设置全局冷却
     public static void setGlobalCooldown(ServerLevel level, int seconds) {
         ModSavedData data = ModSavedData.get(level);
         data.globalCooldown = seconds;
         data.setDirty();    // 脏数据标签，提示存档数据需要更新
+    }
+
+    // 记录 危险传送 是否允许
+    public static boolean isDangerTpAllowed(ServerLevel level) {
+        return ModSavedData.get(level).allowDangerTp;
+    }
+    public static void setDangerTeleportAllowed(ServerLevel level, boolean allowed) {
+        ModSavedData data = ModSavedData.get(level);
+        data.allowDangerTp = allowed;
+        data.setDirty();
     }
 
     // 记录 玩家传送可返回位置 玩家死亡位置

@@ -2,6 +2,8 @@
   "tpa.illegal_execution": "Command for players only",
   "tpa.no_back_position": "No return position",
   "tpa.no_death_position": "No death position",
+  "tpa.danger_tp": "Dangerous",
+  "tpa.danger_tp_status": "Dangerous teleport：%s",
   "tpa.cannot_teleport": "Cannot teleport",
   "tpa.teleport_success": "%s teleported to %s",
   "tpa.back_success": "You returned",
@@ -13,7 +15,7 @@
   "tpa.request_invalidated": "Request expired",
   "tpa.request_failure": "%s denied request",
 
-  "tpa.set_cooldown": "冷却设置为：%s 秒",
+  "tpa.set_cooldown": "Cooldown: %s s",
   "tpa.cooldown_msg": "Cooldown: %ss left",
   "tpa.quick_request": "%s is under attack! [Click to Assist]",
   "tpa.click_to_assist": "[Assist]",

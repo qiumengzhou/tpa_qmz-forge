@@ -2,6 +2,8 @@
   "tpa.illegal_execution": "プレイヤーのみ実行可",
   "tpa.no_back_position": "戻る場所なし",
   "tpa.no_death_position": "死亡場所なし",
+  "tpa.danger_tp": "危険行為",
+  "tpa.danger_tp_status": "危険テレポート：%s",
   "tpa.cannot_teleport": "テレポート不可",
   "tpa.teleport_success": "%s → %s にテレポート",
   "tpa.back_success": "戻りました",
@@ -13,7 +15,7 @@
   "tpa.request_invalidated": "要求の有効期限切れ",
   "tpa.request_failure": "%s が要求を拒否",
 
-  "tpa.set_cooldown": "冷却设置为：%s 秒",
+  "tpa.set_cooldown": "冷却：%s 秒",
   "tpa.cooldown_msg": "冷却中：あと %s 秒",
   "tpa.quick_request": "%s：くそ、援護してくれ！[クリックで救援]",
   "tpa.click_to_assist": "[救援]",

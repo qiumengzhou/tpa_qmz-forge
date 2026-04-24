@@ -17,6 +17,7 @@ public class ModSavedData extends SavedData {
     public final Map<UUID, BackPosition> lastPos = new HashMap<>();
     public final Map<UUID, BackPosition> deathPos = new HashMap<>();
     public int globalCooldown = 30;
+    public boolean allowDangerTp = false;
 
     public ModSavedData() {}
 
@@ -28,6 +29,9 @@ public class ModSavedData extends SavedData {
         if (nbt.contains("GlobalCooldown", Tag.TAG_INT)) {
             data.globalCooldown = nbt.getInt("GlobalCooldown");
         }
+        if (nbt.contains("AllowDangerTeleport", Tag.TAG_BYTE)) {
+            data.allowDangerTp = nbt.getBoolean("AllowDangerTp");
+        }
         return data;
     }
 
@@ -37,6 +41,7 @@ public class ModSavedData extends SavedData {
         nbt.put("LastPosList", saveMap(lastPos));
         nbt.put("DeathPosList", saveMap(deathPos));
         nbt.putInt("GlobalCooldown", globalCooldown);
+        nbt.putBoolean("AllowDangerTp", allowDangerTp);
         return nbt;
     }
 

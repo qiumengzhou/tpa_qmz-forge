@@ -11,6 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.BoolArgumentType;
 
 public class TpaCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
@@ -26,8 +27,17 @@ public class TpaCommand {
                         .then(Commands.argument("playername1", EntityArgument.player())
                                 .then(Commands.argument("playername2", EntityArgument.player())
                                         .executes(context -> {
+                                            ServerPlayer executor = context.getSource().getPlayerOrException();
                                             ServerPlayer from = EntityArgument.getPlayer(context, "playername1");
                                             ServerPlayer to = EntityArgument.getPlayer(context, "playername2");
+                                            // 是否为危险传送 是否进行拦截
+                                            if (!executor.getUUID().equals(from.getUUID())) {
+                                                if (!BackData.isDangerTpAllowed(executor.serverLevel())) {
+                                                    context.getSource().sendFailure(Component.translatable("tpa.danger_tp")
+                                                            .withStyle(ChatFormatting.RED));
+                                                    return 0;
+                                                }
+                                            }
                                             teleportDirect(context.getSource(), from, to, false);
                                             return 1;
                                         })))
@@ -42,21 +52,33 @@ public class TpaCommand {
                                     return 1;
                                 }))
         );
-        dispatcher.register(    // 挂载设置指令，用于设置救援功能的冷却
-                Commands.literal("setAssist")
-                        .requires(source -> source.hasPermission(2)) // 仅管理员
-                        .then(Commands.argument("seconds", IntegerArgumentType.integer(10)) // 限制最小值为 10 秒
-                                .executes(context -> {
-                                    int seconds = IntegerArgumentType.getInteger(context, "seconds");
-                                    ServerLevel level = context.getSource().getLevel();
-                                    BackData.setGlobalCooldown(level, seconds);
-                                    context.getSource().sendSuccess(() ->
-                                            Component.translatable(
-                                                    "tpa.set_cooldown",
-                                                    seconds
-                                            ).withStyle(ChatFormatting.GREEN), true);
-                                    return 1;
-                                }))
+        dispatcher.register(    // 挂载设置指令
+                Commands.literal("tpaConfig")
+                        .requires(source -> source.hasPermission(2))
+                        .then(Commands.literal("setAssist")     // 设置 救援功能的冷却
+                                .then(Commands.argument("seconds", IntegerArgumentType.integer(10)) // 限制最小值为 10 秒
+                                        .executes(context -> {
+                                            int seconds = IntegerArgumentType.getInteger(context, "seconds");
+                                            ServerLevel level = context.getSource().getLevel();
+                                            BackData.setGlobalCooldown(level, seconds);
+                                            context.getSource().sendSuccess(() ->
+                                                    Component.translatable(
+                                                            "tpa.set_cooldown",
+                                                            seconds
+                                                    ).withStyle(ChatFormatting.GREEN), true);
+                                            return 1;
+                                        })))
+                        .then(Commands.literal("dangerTp")   // 设置 是否禁用 危险行为
+                                .then(Commands.argument("allowed", BoolArgumentType.bool())
+                                        .executes(context -> {
+                                            boolean allowed = BoolArgumentType.getBool(context, "allowed");
+                                            BackData.setDangerTeleportAllowed(context.getSource().getLevel(), allowed);
+
+                                            String status = allowed ? "true" : "false";
+                                            context.getSource().sendSuccess(() -> Component.translatable("tpa.danger_tp_status", status)
+                                                    .withStyle(ChatFormatting.YELLOW), true);
+                                            return 1;
+                                        })))
         );
     }
 
@@ -74,7 +96,7 @@ public class TpaCommand {
             return;
         }
 
-        // 直接执行传送
+        // 执行传送
         teleport(from, to, isQuickAssist);
     }
 
