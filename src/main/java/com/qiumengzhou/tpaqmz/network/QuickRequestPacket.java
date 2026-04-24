@@ -24,7 +24,9 @@ public class QuickRequestPacket {
 
             long currentTime = System.currentTimeMillis();
             long lastTime = BackData.QUICK_REQUEST_COOLDOWN.getOrDefault(sender.getUUID(), 0L);
-            long cooldownMillis = 30 * 1000;    // 冷却时间
+            // 读取全局冷却时间
+            int cooldownInSeconds = BackData.getGlobalCooldown(sender.serverLevel());
+            long cooldownMillis = (long) cooldownInSeconds * 1000;
 
             if (currentTime - lastTime < cooldownMillis) {  // 检查 玩家发送求救 的频率
                 long secondsLeft = (cooldownMillis - (currentTime - lastTime)) / 1000;

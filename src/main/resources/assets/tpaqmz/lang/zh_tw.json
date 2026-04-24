@@ -13,6 +13,7 @@
   "tpa.request_invalidated": "該請求已失效",
   "tpa.request_failure": "%s拒絕了請求",
 
+  "tpa.set_cooldown": "冷却设置为：%s 秒",
   "tpa.cooldown_msg": "請等待 %s 秒後再試！",
   "tpa.quick_request": "%s：一支穿雲箭，千軍萬馬來相見！",
   "tpa.click_to_assist": "[救援]",

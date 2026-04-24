@@ -9,6 +9,8 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 
 public class TpaCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
@@ -37,6 +39,22 @@ public class TpaCommand {
                                     ServerPlayer helper = context.getSource().getPlayerOrException();
                                     ServerPlayer needy = EntityArgument.getPlayer(context, "target");
                                     teleportDirect(context.getSource(), helper, needy, true);
+                                    return 1;
+                                }))
+        );
+        dispatcher.register(    // 挂载设置指令，用于设置救援功能的冷却
+                Commands.literal("setAssist")
+                        .requires(source -> source.hasPermission(2)) // 仅管理员
+                        .then(Commands.argument("seconds", IntegerArgumentType.integer(10)) // 限制最小值为 10 秒
+                                .executes(context -> {
+                                    int seconds = IntegerArgumentType.getInteger(context, "seconds");
+                                    ServerLevel level = context.getSource().getLevel();
+                                    BackData.setGlobalCooldown(level, seconds);
+                                    context.getSource().sendSuccess(() ->
+                                            Component.translatable(
+                                                    "tpa.set_cooldown",
+                                                    seconds
+                                            ).withStyle(ChatFormatting.GREEN), true);
                                     return 1;
                                 }))
         );

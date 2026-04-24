@@ -13,6 +13,7 @@
   "tpa.request_invalidated": "要求の有効期限切れ",
   "tpa.request_failure": "%s が要求を拒否",
 
+  "tpa.set_cooldown": "冷却设置为：%s 秒",
   "tpa.cooldown_msg": "冷却中：あと %s 秒",
   "tpa.quick_request": "%s：くそ、援護してくれ！[クリックで救援]",
   "tpa.click_to_assist": "[救援]",

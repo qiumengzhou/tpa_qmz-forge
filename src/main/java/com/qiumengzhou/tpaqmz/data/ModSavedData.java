@@ -16,6 +16,7 @@ import java.util.UUID;
 public class ModSavedData extends SavedData {
     public final Map<UUID, BackPosition> lastPos = new HashMap<>();
     public final Map<UUID, BackPosition> deathPos = new HashMap<>();
+    public int globalCooldown = 30;
 
     public ModSavedData() {}
 
@@ -24,6 +25,9 @@ public class ModSavedData extends SavedData {
         ModSavedData data = new ModSavedData();
         loadMap(nbt.getList("LastPosList", Tag.TAG_COMPOUND), data.lastPos);
         loadMap(nbt.getList("DeathPosList", Tag.TAG_COMPOUND), data.deathPos);
+        if (nbt.contains("GlobalCooldown", Tag.TAG_INT)) {
+            data.globalCooldown = nbt.getInt("GlobalCooldown");
+        }
         return data;
     }
 
@@ -32,6 +36,7 @@ public class ModSavedData extends SavedData {
     public CompoundTag save(CompoundTag nbt) {
         nbt.put("LastPosList", saveMap(lastPos));
         nbt.put("DeathPosList", saveMap(deathPos));
+        nbt.putInt("GlobalCooldown", globalCooldown);
         return nbt;
     }
 

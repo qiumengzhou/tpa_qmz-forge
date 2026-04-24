@@ -13,6 +13,7 @@
   "tpa.request_invalidated": "Request expired",
   "tpa.request_failure": "%s denied request",
 
+  "tpa.set_cooldown": "冷却设置为：%s 秒",
   "tpa.cooldown_msg": "Cooldown: %ss left",
   "tpa.quick_request": "%s is under attack! [Click to Assist]",
   "tpa.click_to_assist": "[Assist]",
