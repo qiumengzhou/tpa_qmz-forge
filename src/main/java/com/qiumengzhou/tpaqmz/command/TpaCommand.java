@@ -44,10 +44,22 @@ public class TpaCommand {
         );
         dispatcher.register(    // 挂载救援指令
                 Commands.literal("assist")
+                        .requires(source -> source.hasPermission(2))
                         .then(Commands.argument("target", EntityArgument.player())
                                 .executes(context -> {
                                     ServerPlayer helper = context.getSource().getPlayerOrException();
                                     ServerPlayer needy = EntityArgument.getPlayer(context, "target");
+                                    // 有效期检查逻辑
+                                    long requestTime = BackData.CLICK_REQUEST_TIME.getOrDefault(needy.getUUID(), 0L);
+                                    int timeoutMinutes = BackData.getAssistTimeout(helper.serverLevel());
+                                    long timeoutMillis = (long) timeoutMinutes * 60 * 1000;
+                                    long currentTime = System.currentTimeMillis();
+
+                                    if (currentTime - requestTime > timeoutMillis) {
+                                        context.getSource().sendFailure(Component.translatable("tpa.request_invalidated")
+                                                .withStyle(ChatFormatting.RED));
+                                        return 0;
+                                    }
                                     teleportDirect(context.getSource(), helper, needy, true);
                                     return 1;
                                 }))
@@ -55,7 +67,7 @@ public class TpaCommand {
         dispatcher.register(    // 挂载设置指令
                 Commands.literal("tpaConfig")
                         .requires(source -> source.hasPermission(2))
-                        .then(Commands.literal("setAssist")     // 设置 救援功能的冷却
+                        .then(Commands.literal("setCooldown")     // 设置 救援请求 冷却
                                 .then(Commands.argument("seconds", IntegerArgumentType.integer(10)) // 限制最小值为 10 秒
                                         .executes(context -> {
                                             int seconds = IntegerArgumentType.getInteger(context, "seconds");
@@ -66,6 +78,16 @@ public class TpaCommand {
                                                             "tpa.set_cooldown",
                                                             seconds
                                                     ).withStyle(ChatFormatting.GREEN), true);
+                                            return 1;
+                                        })))
+                        .then(Commands.literal("setTimeout")    // 设置救援请求 有效期
+                                .then(Commands.argument("minutes", IntegerArgumentType.integer(2)) // 限制最小值为 2 分钟
+                                        .executes(context -> {
+                                            int minutes = IntegerArgumentType.getInteger(context, "minutes");
+                                            BackData.setAssistTimeout(context.getSource().getLevel(), minutes);
+
+                                            context.getSource().sendSuccess(() -> Component.translatable("tpa.set_timeout_success", minutes)
+                                                    .withStyle(ChatFormatting.GREEN), true);
                                             return 1;
                                         })))
                         .then(Commands.literal("dangerTp")   // 设置 是否禁用 危险行为

@@ -23,7 +23,7 @@ public class QuickRequestPacket {
             if (sender == null) return;
 
             long currentTime = System.currentTimeMillis();
-            long lastTime = BackData.QUICK_REQUEST_COOLDOWN.getOrDefault(sender.getUUID(), 0L);
+            long lastTime = BackData.CLICK_REQUEST_TIME.getOrDefault(sender.getUUID(), 0L);
             // 读取全局冷却时间
             int cooldownInSeconds = BackData.getGlobalCooldown(sender.serverLevel());
             long cooldownMillis = (long) cooldownInSeconds * 1000;
@@ -35,7 +35,7 @@ public class QuickRequestPacket {
                 return;
             }
 
-            BackData.QUICK_REQUEST_COOLDOWN.put(sender.getUUID(), currentTime);
+            BackData.CLICK_REQUEST_TIME.put(sender.getUUID(), currentTime); // 救援请求 发起时间
 
             // 构建可点击的文本：[点击救援]
             MutableComponent clickText = Component.translatable("tpa.click_to_assist")
