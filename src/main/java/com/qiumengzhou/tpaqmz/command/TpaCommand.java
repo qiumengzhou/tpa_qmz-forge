@@ -44,7 +44,6 @@ public class TpaCommand {
         );
         dispatcher.register(    // 挂载救援指令
                 Commands.literal("assist")
-                        .requires(source -> source.hasPermission(2))
                         .then(Commands.argument("target", EntityArgument.player())
                                 .executes(context -> {
                                     ServerPlayer helper = context.getSource().getPlayerOrException();
