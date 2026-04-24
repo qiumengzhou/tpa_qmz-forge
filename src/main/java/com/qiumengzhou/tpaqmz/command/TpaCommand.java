@@ -86,7 +86,7 @@ public class TpaCommand {
                                             int minutes = IntegerArgumentType.getInteger(context, "minutes");
                                             BackData.setAssistTimeout(context.getSource().getLevel(), minutes);
 
-                                            context.getSource().sendSuccess(() -> Component.translatable("tpa.set_timeout_success", minutes)
+                                            context.getSource().sendSuccess(() -> Component.translatable("tpa.set_timeout", minutes)
                                                     .withStyle(ChatFormatting.GREEN), true);
                                             return 1;
                                         })))

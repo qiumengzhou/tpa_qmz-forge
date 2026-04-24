@@ -8,15 +8,9 @@
   "tpa.teleport_success": "%s teleported to %s",
   "tpa.back_success": "You returned",
 
-  "tpa.request_send": "%s wants to teleport %s to %s",
-  "tpa.request_accept": "[Accept]",
-  "tpa.request_deny": "[Deny]",
-  "tpa.request_timeout": "Request timed out",
-  "tpa.request_invalidated": "Request expired",
-  "tpa.request_failure": "%s denied request",
-
   "tpa.set_cooldown": "Cooldown: %s s",
   "tpa.cooldown_msg": "Cooldown: %ss left",
+  "tpa.set_timeout": "Request expires in %sm",
   "tpa.quick_request": "%s is under attack! [Click to Assist]",
   "tpa.click_to_assist": "[Assist]",
   "tpa.tip_for_clicking": "Assist the player",

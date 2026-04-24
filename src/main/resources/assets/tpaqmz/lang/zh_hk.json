@@ -8,15 +8,9 @@
   "tpa.teleport_success": "%s已傳送到%s",
   "tpa.back_success": "你已返回",
 
-  "tpa.request_send": "%s請求將%s傳送到%s",
-  "tpa.request_accept": "[同意]",
-  "tpa.request_deny": "[拒絕]",
-  "tpa.request_timeout": "請求逾時",
-  "tpa.request_invalidated": "請求已失效",
-  "tpa.request_failure": "%s拒絕了請求",
-
   "tpa.set_cooldown": "冷卻：%s 秒",
   "tpa.cooldown_msg": "請等待 %s 秒後再試！",
+  "tpa.set_timeout": "請求有效期：%s分鐘",
   "tpa.quick_request": "%s：一支穿雲箭，千軍萬馬來相見！",
   "tpa.click_to_assist": "[救援]",
   "tpa.tip_for_clicking": "進行救援",

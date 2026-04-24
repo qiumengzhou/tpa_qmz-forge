@@ -8,15 +8,9 @@
   "tpa.teleport_success": "%s已传送到%s",
   "tpa.back_success": "你已返回",
 
-  "tpa.request_send": "%s请求将%s传送到%s",
-  "tpa.request_accept": "[同意]",
-  "tpa.request_deny": "[拒绝]",
-  "tpa.request_timeout": "请求超时",
-  "tpa.request_invalidated": "请求已失效",
-  "tpa.request_failure": "%s拒绝了请求",
-
   "tpa.set_cooldown": "冷却：%s 秒",
   "tpa.cooldown_msg": "请等待 %s 秒后再试！",
+  "tpa.set_timeout": "请求有效期 %s 分钟",
   "tpa.quick_request": "%s：一支穿云箭，千军万马来相见！",
   "tpa.click_to_assist": "[救援]",
   "tpa.tip_for_clicking": "进行救援",
